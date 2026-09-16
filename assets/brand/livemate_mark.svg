@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" fill="none" role="img" aria-label="Livemate">
+  <!--
+    The Livemate mark: a house holding two people who have found each other.
+    The left figure is brand orange, the right is ink, and their clasped arms
+    are the diagonal that reads as the M in the wordmark.
+
+    Geometry is mirrored in tool/brand/generate_brand_assets.py, which renders
+    the launcher icons from the same coordinates. Change one, change both.
+  -->
+  <g stroke-linejoin="round" stroke-linecap="round">
+    <!-- House: roof apex, two eaves, two walls, floor. -->
+    <path d="M256 66 L444 202 L444 424 L68 424 L68 202 Z"
+          stroke="#F97316" stroke-width="38"/>
+
+    <!-- Four-pane window, upper left, clear of the roof slope. -->
+    <g fill="#F97316">
+      <rect x="132" y="186" width="30" height="30" rx="8"/>
+      <rect x="174" y="186" width="30" height="30" rx="8"/>
+      <rect x="132" y="228" width="30" height="30" rx="8"/>
+      <rect x="174" y="228" width="30" height="30" rx="8"/>
+    </g>
+
+    <!-- Left figure — brand orange. -->
+    <g fill="#F97316">
+      <circle cx="170" cy="294" r="30"/>
+      <path d="M139 404 v-29 a31 31 0 0 1 62 0 v29 z"/>
+    </g>
+
+    <!-- Right figure — ink. -->
+    <g fill="#1F1613">
+      <circle cx="338" cy="282" r="32"/>
+      <path d="M305 404 v-33 a33 33 0 0 1 66 0 v33 z"/>
+    </g>
+
+    <!-- The clasp: each arm carries its own owner's colour and they meet in
+         the middle, so the join is the point of the whole mark. -->
+    <path d="M196 360 L256 390" stroke="#F97316" stroke-width="24"/>
+    <path d="M256 390 L316 352" stroke="#1F1613" stroke-width="24"/>
+  </g>
+</svg>

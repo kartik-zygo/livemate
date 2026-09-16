@@ -1,0 +1,86 @@
+name: livemate
+description: "Livemate — find your place, find your people."
+publish_to: 'none'
+
+version: 2.0.3+3
+
+environment:
+  sdk: ^3.8.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # State management, DI and routing
+  get: ^4.7.2
+
+  # Networking
+  dio: ^5.7.0
+  http_parser: ^4.1.0
+
+  # Auth
+  supabase_flutter: ^2.8.0
+
+  # UI
+  cached_network_image: ^3.4.1
+  shimmer: ^3.0.0
+  flutter_svg: ^2.0.17
+
+  # Reads the .env file at startup
+  flutter_dotenv: ^5.2.1
+
+  # Utilities
+  intl: ^0.20.2
+  image_picker: ^1.1.2
+
+  # Dial / email a revealed contact
+  url_launcher: ^6.3.2
+  shared_preferences: ^2.3.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+  # Generates every launcher density from assets/brand/. Regenerate with
+  # `dart run flutter_launcher_icons` after changing the mark.
+  flutter_launcher_icons: ^0.14.3
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/illustrations/
+    - assets/brand/
+    # Build-time configuration. Copy .env.example to .env and fill it in —
+    # the build fails without this file present.
+    - .env
+
+# ── Launcher icons ────────────────────────────────────────────────────────
+# Sources are produced by tool/brand/generate_brand_assets.py from the same
+# geometry as assets/brand/livemate_mark.svg.
+flutter_launcher_icons:
+  image_path: "assets/brand/icon.png"
+
+  android: "ic_launcher"
+  adaptive_icon_background: "assets/brand/icon_background.png"
+  adaptive_icon_foreground: "assets/brand/icon_foreground.png"
+  # Android 13+ themed icon: the launcher tints a monochrome layer to match
+  # the wallpaper, so it gets the foreground silhouette.
+  adaptive_icon_monochrome: "assets/brand/icon_foreground.png"
+  min_sdk_android: 21
+
+  ios: true
+  # The App Store rejects an icon with an alpha channel.
+  remove_alpha_ios: true
+
+  web:
+    generate: true
+    image_path: "assets/brand/icon.png"
+    background_color: "#FDFAF7"
+    theme_color: "#F97316"
+  macos:
+    generate: true
+    image_path: "assets/brand/icon.png"

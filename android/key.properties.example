@@ -1,0 +1,35 @@
+# Copy to android/key.properties and fill in. That file is gitignored and must
+# never be committed, shared, or pasted into a chat — whoever holds it plus the
+# keystore can publish updates as you.
+#
+# 1. Create the upload keystore (once, and back it up somewhere durable —
+#    losing it means you can never update the app under this listing again
+#    unless Play App Signing key reset is available to you):
+#
+#      keytool -genkeypair -v \
+#        -keystore "$HOME/livemate-upload.jks" \
+#        -storetype JKS \
+#        -keyalg RSA -keysize 2048 -validity 10000 \
+#        -alias livemate-upload
+#
+#    It will prompt for a store password, a key password and your details.
+#
+# 2. Fill this file in and save it as android/key.properties.
+#
+# 3. Build the bundle Play wants:
+#
+#      flutter build appbundle --release
+#
+#    Output: build/app/outputs/bundle/release/app-release.aab
+#
+# 4. Verify what you are about to upload is signed with the right key:
+#
+#      keytool -list -v -keystore "$HOME/livemate-upload.jks" -alias livemate-upload
+
+storePassword=YOUR_STORE_PASSWORD
+keyPassword=YOUR_KEY_PASSWORD
+keyAlias=livemate-upload
+
+# Absolute path, or relative to the android/app directory. On Windows use
+# forward slashes: C:/Users/you/livemate-upload.jks
+storeFile=/absolute/path/to/livemate-upload.jks
