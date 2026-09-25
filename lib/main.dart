@@ -63,16 +63,16 @@ Future<void> main() async {
 
   await InitialBinding.register();
 
-  runApp(const LivemateApp());
+  runApp(const MyFlatHomesApp());
 }
 
-class LivemateApp extends StatelessWidget {
-  const LivemateApp({super.key});
+class MyFlatHomesApp extends StatelessWidget {
+  const MyFlatHomesApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Livemate',
+      title: 'MyFlat Homes',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
       // The palette is designed for a warm light surface; a dark variant would

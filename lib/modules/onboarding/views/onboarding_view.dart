@@ -58,8 +58,18 @@ class _TopBar extends GetView<OnboardingController> {
       padding: const EdgeInsets.fromLTRB(20, 12, 14, 4),
       child: Row(
         children: [
-          const LivemateLockup(markSize: 32, fontSize: 19),
-          const Spacer(),
+          // Shrinks rather than overflows when a narrow screen or a large
+          // text scale leaves less room beside the Skip pill.
+          const Expanded(
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: BrandLockup(markSize: 32, fontSize: 19),
+              ),
+            ),
+          ),
+          const SizedBox(width: 12),
           Obx(
             () => AnimatedOpacity(
               duration: const Duration(milliseconds: 240),

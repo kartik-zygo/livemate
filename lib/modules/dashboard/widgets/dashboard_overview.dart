@@ -607,8 +607,8 @@ class _PeopleLooking extends GetView<DashboardController> {
             compact: true,
             title: 'Choose a city to fill this in',
             message:
-                'Livemate matches city to city, so everything here starts with '
-                'one.',
+                'MyFlat Homes matches city to city, so everything here starts '
+                'with one.',
           );
         }
         return const SizedBox.shrink();

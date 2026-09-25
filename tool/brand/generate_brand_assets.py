@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Renders the Livemate launcher icons from the same geometry as the SVG mark.
+"""Renders the MyFlat Homes launcher icons from the same geometry as the SVG mark.
 
-The mark lives in assets/brand/livemate_mark.svg and is authoritative for
+The mark lives in assets/brand/myflat_mark.svg and is authoritative for
 in-app use. There is no SVG rasteriser on this toolchain, so the launcher
 icons are drawn here from the identical 512-unit coordinate system. If the SVG
 changes, change the coordinates below to match.
@@ -121,7 +121,7 @@ def main():
         draw_mark(ImageDraw.Draw(img), canvas, ORANGE, ORANGE, INK, ORANGE)
         return img
 
-    render('livemate_mark.png', mark)
+    render('myflat_mark.png', mark)
 
     # 2. The launcher icon: white mark on the brand gradient, matching the app
     #    icon on the brand sheet.

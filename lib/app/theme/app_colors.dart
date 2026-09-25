@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// The Livemate palette, mirrored from the web app's terracotta re-theme.
+/// The MyFlat Homes palette, mirrored from the web app's terracotta re-theme.
 ///
 /// Role assignments matter for contrast: [brand500] is a *fill* colour and must
 /// never be used for text on a light surface — use [brand700] there instead.

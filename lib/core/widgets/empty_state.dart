@@ -16,7 +16,7 @@ enum AppIllustration {
   success('assets/illustrations/success.svg'),
   error('assets/illustrations/error_state.svg'),
   authHero('assets/illustrations/auth_hero.svg'),
-  logo('assets/brand/livemate_mark.svg');
+  logo('assets/brand/myflat_mark.svg');
 
   const AppIllustration(this.asset);
   final String asset;

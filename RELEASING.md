@@ -1,7 +1,9 @@
-# Releasing Livemate to Google Play
+# Releasing MyFlat Homes to Google Play
 
 Package name: **`com.livematex.app`** — this is permanent once the first
-bundle is uploaded. It cannot be changed for that listing afterwards.
+bundle is uploaded. It cannot be changed for that listing afterwards, which is
+why it still carries the app's earlier name, Livemate. Only the display name
+changed.
 
 ## One-time setup
 
@@ -32,7 +34,7 @@ apps, which is what makes a lost upload key recoverable rather than fatal.
 1. **Bump the version** in `pubspec.yaml`:
 
    ```yaml
-   version: 1.0.0+1     # versionName+versionCode
+   version: 3.0.5+5     # versionName+versionCode
    ```
 
    The build number after `+` becomes Android's `versionCode`. Play rejects a
@@ -72,12 +74,33 @@ apps, which is what makes a lost upload key recoverable rather than fatal.
 | R8 / resource shrinking + keep rules | `android/app/proguard-rules.pro` |
 | Debug builds installable alongside release | `applicationIdSuffix = ".debug"` |
 | Launcher + adaptive + themed icons | `pubspec.yaml` → `flutter_launcher_icons` |
-| App label "Livemate" | `android/app/src/main/AndroidManifest.xml` |
+| App label "MyFlat Homes" | `android/app/src/main/AndroidManifest.xml` |
 | Language splits disabled | `bundle { language { enableSplit = false } }` |
+| `compileSdk` / `targetSdk` 36 (Android 16) | `android/app/build.gradle.kts` |
+
+## Targeting API 36
+
+Play requires API 36 for every update from 31 Aug 2026. Play judges the
+releases that are live, so a compliant build only counts once it is rolled out
+to **production** — a build sitting in a testing track does not clear the
+warning. On Android 16 devices, targeting 36 changes three things this app
+touches, so check them in the release smoke test:
+
+- **Portrait lock is ignored on large screens.** `main.dart` locks portrait,
+  but on tablets and unfolded foldables (smallest width ≥ 600dp) Android 16
+  lets the app rotate and resize anyway. Rotate a tablet emulator through the
+  main screens.
+- **Predictive back is on by default.** Back gestures go through
+  `OnBackInvokedCallback`. Check that back still asks before discarding a
+  half-finished listing or finder post, and steps back through dashboard
+  sections (the `PopScope`s in those screens).
+- **Edge-to-edge can no longer be opted out of.** The app already draws
+  edge-to-edge, so nothing should change — just confirm nothing sits under the
+  status or navigation bar.
 
 ## Store listing notes
 
-- **App name:** Livemate
+- **App name:** MyFlat Homes
 - **Tagline:** Find your place. Find your people.
 - **Icon source:** `assets/brand/icon.png` (1024×1024, no alpha) — regenerate
   with `python tool/brand/generate_brand_assets.py`, then
@@ -86,6 +109,12 @@ apps, which is what makes a lost upload key recoverable rather than fatal.
   carries a cleartext exception.
 - **Privacy policy URL:** `https://www.zygonich.com/livemate/privacy-policy`
 - **Account deletion URL:** `https://www.zygonich.com/livemate/delete-account`
+- **Support URL / website:** `https://www.zygonich.com/livemate/support`
+- **Support email:** `support@zygonich.com`
+
+The old `http://150.241.245.88:8095/...` addresses no longer answer — the port
+is closed now that the API is served over HTTPS. If a store listing still points
+at one, replace it with the URLs above.
 
 ## Data safety declaration
 
@@ -98,7 +127,7 @@ information, and remove it if an earlier submission declared it.
 
 ---
 
-# Releasing Livemate to the App Store (iOS)
+# Releasing MyFlat Homes to the App Store (iOS)
 
 iOS builds need a Mac. Everything inside `ios/` is already configured; the Mac
 needs the toolchain, a signing team, and the steps below.
@@ -106,7 +135,7 @@ needs the toolchain, a signing team, and the steps below.
 | Piece | Value / where |
 |---|---|
 | Bundle identifier | `com.livematex.app` — `ios/Runner.xcodeproj/project.pbxproj` |
-| Display name | Livemate — `ios/Runner/Info.plist` |
+| Display name | MyFlat Homes — `ios/Runner/Info.plist` |
 | Minimum iOS | 15.0 — `ios/Podfile`, `project.pbxproj` and `ios/Flutter/AppFrameworkInfo.plist` |
 | Devices | iPhone and iPad |
 | CocoaPods | `ios/Podfile`, included from `ios/Flutter/Debug.xcconfig` and `Release.xcconfig` |
@@ -115,7 +144,7 @@ needs the toolchain, a signing team, and the steps below.
 | Networking | HTTPS only — no App Transport Security exceptions |
 | Export compliance | `ITSAppUsesNonExemptEncryption` = `false` (standard HTTPS only) |
 | App icon | `flutter_launcher_icons`, alpha channel removed |
-| Privacy policy and in-app account deletion | Profile screen (guideline 5.1.1) |
+| Support, privacy policy and in-app account deletion | Profile screen (guideline 5.1.1) |
 
 ## One-time setup on the Mac
 
@@ -169,7 +198,9 @@ needs the toolchain, a signing team, and the steps below.
 
 ## App Store Connect notes
 
+- **Name:** MyFlat Homes
 - **Privacy policy URL:** `https://www.zygonich.com/livemate/privacy-policy`
+- **Support URL:** `https://www.zygonich.com/livemate/support`
 - **App Privacy:** name, email, phone number and photos, all used for app
   functionality. No tracking, no purchases.
 - **Sign-in required:** every screen is behind an account, so give App Review a

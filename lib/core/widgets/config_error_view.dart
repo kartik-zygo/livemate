@@ -20,7 +20,7 @@ class ConfigErrorApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => MaterialApp(
-    title: 'Livemate — setup needed',
+    title: 'MyFlat Homes — setup needed',
     debugShowCheckedModeBanner: false,
     theme: AppTheme.light,
     home: ConfigErrorView(reason: reason),
@@ -47,7 +47,7 @@ class ConfigErrorView extends StatelessWidget {
                 compact: true,
                 title: 'One setting away from running',
                 message:
-                    'Livemate signs in through Supabase, so it needs the '
+                    'MyFlat Homes signs in through Supabase, so it needs the '
                     'project publishable (anon) key before it can start.',
               ),
               const SizedBox(height: 8),

@@ -7,7 +7,7 @@ import '../../data/models/user_model.dart';
 import '../../data/repositories/user_repository.dart';
 import '../network/api_exception.dart';
 
-/// Owns the Supabase session and the Livemate profile behind it.
+/// Owns the Supabase session and the MyFlat Homes profile behind it.
 ///
 /// Supabase issues and auto-refreshes the JWT; the Dio interceptor reads that
 /// token straight off `Supabase.instance.client`, so this service never has to

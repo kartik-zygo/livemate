@@ -23,10 +23,10 @@ class SplashView extends GetView<SplashController> {
             children: [
               _AnimatedMark(),
               const SizedBox(height: 24),
-              const LivemateWordmark(fontSize: 34),
+              const BrandWordmark(fontSize: 34),
               const SizedBox(height: 8),
               Text(
-                LivemateWordmark.tagline,
+                BrandWordmark.tagline,
                 style: AppTextStyles.bodyLarge.copyWith(
                   color: AppColors.inkTertiary,
                 ),
@@ -96,7 +96,7 @@ class _AnimatedMarkState extends State<_AnimatedMark>
           AppIllustration.logo.asset,
           width: 96,
           height: 96,
-          semanticsLabel: 'Livemate',
+          semanticsLabel: 'MyFlat Homes',
         ),
       ),
     ),

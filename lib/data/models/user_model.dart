@@ -127,7 +127,7 @@ class PersonSummary {
 
   factory PersonSummary.fromJson(Map<String, dynamic> json) => PersonSummary(
     id: asString(json['id']),
-    fullName: asString(json['fullName'], 'Livemate member'),
+    fullName: asString(json['fullName'], 'MyFlat Homes member'),
     bio: asStringOrNull(json['bio']),
     occupation: asStringOrNull(json['occupation']),
     gender: ProfileGender.fromWire(json['gender']),

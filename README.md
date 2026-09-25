@@ -1,14 +1,15 @@
-# Livemate
+# MyFlat Homes
 
 **Find your place. Find your people.**
 
-A two-sided marketplace for shared housing in India, built to the Livemate API
-specification. Package name `com.livematex.app` — see
+A two-sided marketplace for shared housing in India, built to the MyFlat Homes
+API specification. Package name `com.livematex.app` (kept from the app's
+earlier name, Livemate — store IDs cannot change) — see
 [RELEASING.md](RELEASING.md) for the Play Store pipeline.
 
 - **Tenant listings** — someone has a room and wants a flatmate.
 - **Finder posts** — someone is looking for a room, either self-serve or with a
-  Livemate manager's help.
+  MyFlat Homes manager's help.
 
 The core loop is **browse → enquire → owner accepts → contact details revealed →
 move in**. Every screen serves that sequence.
@@ -265,7 +266,7 @@ arms are the diagonal that reads as the **M** in the wordmark.
 
 | Asset | Path |
 | --- | --- |
-| Mark (authoritative, in-app) | `assets/brand/livemate_mark.svg` |
+| Mark (authoritative, in-app) | `assets/brand/myflat_mark.svg` |
 | Wordmark + lockup widgets | [`core/widgets/brand.dart`](lib/core/widgets/brand.dart) |
 | Launcher icon source | `assets/brand/icon.png` |
 | Android adaptive layers | `assets/brand/icon_foreground.png`, `icon_background.png` |

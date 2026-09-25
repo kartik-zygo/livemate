@@ -116,8 +116,8 @@ class SignupView extends GetView<SignupController> {
                       const SizedBox(width: 11),
                       Expanded(
                         child: Text(
-                          'I agree to the Livemate terms of use and privacy '
-                          'policy.',
+                          'I agree to the MyFlat Homes terms of use and '
+                          'privacy policy.',
                           style: AppTextStyles.body.copyWith(fontSize: 13.5),
                         ),
                       ),

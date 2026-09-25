@@ -107,8 +107,8 @@ class Env {
     'webp',
   ];
 
-  /// Cities Livemate covers, across all 36 states and union territories. Copy
-  /// only — the real list comes from `GET /cities`.
+  /// Cities MyFlat Homes covers, across all 36 states and union territories.
+  /// Copy only — the real list comes from `GET /cities`.
   static const int cityCount = 652;
 
   // ── Validation ─────────────────────────────────────────────────────────

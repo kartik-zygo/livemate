@@ -5,12 +5,12 @@ import '../../app/theme/app_colors.dart';
 import '../../app/theme/app_text_styles.dart';
 import 'empty_state.dart';
 
-/// The Livemate wordmark: "Live" in brand orange, "mate" in ink.
+/// The MyFlat Homes wordmark: "MyFlat" in brand orange, "Homes" in ink.
 ///
 /// One widget rather than a literal in each screen, so the two halves can never
 /// drift apart in weight, tracking or colour.
-class LivemateWordmark extends StatelessWidget {
-  const LivemateWordmark({super.key, this.fontSize = 32, this.style});
+class BrandWordmark extends StatelessWidget {
+  const BrandWordmark({super.key, this.fontSize = 32, this.style});
 
   final double fontSize;
 
@@ -30,23 +30,23 @@ class LivemateWordmark extends StatelessWidget {
       TextSpan(
         children: [
           TextSpan(
-            text: 'Live',
+            text: 'MyFlat',
             style: base.copyWith(color: AppColors.brand500),
           ),
           TextSpan(
-            text: 'mate',
+            text: ' Homes',
             style: base.copyWith(color: AppColors.inkPrimary),
           ),
         ],
       ),
-      semanticsLabel: 'Livemate',
+      semanticsLabel: 'MyFlat Homes',
     );
   }
 }
 
 /// The mark and the wordmark side by side — the horizontal lockup.
-class LivemateLockup extends StatelessWidget {
-  const LivemateLockup({
+class BrandLockup extends StatelessWidget {
+  const BrandLockup({
     super.key,
     this.markSize = 40,
     this.fontSize = 20,
@@ -69,7 +69,7 @@ class LivemateLockup extends StatelessWidget {
           excludeFromSemantics: true,
         ),
         SizedBox(width: markSize * 0.28),
-        LivemateWordmark(fontSize: fontSize),
+        BrandWordmark(fontSize: fontSize),
       ],
     );
 
@@ -82,7 +82,7 @@ class LivemateLockup extends StatelessWidget {
         lockup,
         SizedBox(height: markSize * 0.16),
         Text(
-          LivemateWordmark.tagline,
+          BrandWordmark.tagline,
           style: AppTextStyles.caption.copyWith(fontSize: fontSize * 0.52),
         ),
       ],

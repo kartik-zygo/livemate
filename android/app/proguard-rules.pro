@@ -1,4 +1,4 @@
-# R8 rules for the Livemate release build.
+# R8 rules for the MyFlat Homes release build.
 #
 # The Flutter Gradle plugin already contributes the keep rules for the engine
 # and the embedding. What is left is the handful of things R8 cannot see are

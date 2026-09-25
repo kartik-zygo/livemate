@@ -86,7 +86,8 @@ extension PostTierMeta on PostTier {
     PostTier.selfServe =>
       'Your post goes live instantly. You browse and reach out yourself.',
     PostTier.managed =>
-      'A Livemate manager shortlists rooms for you and coordinates viewings.',
+      'A MyFlat Homes manager shortlists rooms for you and coordinates '
+          'viewings.',
   };
 
   List<String> get perks => switch (this) {

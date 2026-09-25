@@ -86,8 +86,8 @@ class _CityPickerSheetState extends State<CityPickerSheet> {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      'Livemate covers 652 cities across every state and union '
-                      'territory.',
+                      'MyFlat Homes covers 652 cities across every state and '
+                      'union territory.',
                       style: AppTextStyles.caption,
                     ),
                     const SizedBox(height: 16),
@@ -219,8 +219,8 @@ class ChooseCityPrompt extends StatelessWidget {
     required this.onChoose,
     this.title = 'Choose a city to start browsing',
     this.message =
-        'Livemate matches city to city, so pick where you want to live and we '
-        'will show you every room open there.',
+        'MyFlat Homes matches city to city, so pick where you want to live and '
+        'we will show you every room open there.',
   });
 
   final VoidCallback onChoose;

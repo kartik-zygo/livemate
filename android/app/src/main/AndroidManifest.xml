@@ -9,7 +9,7 @@
     <uses-feature android:name="android.hardware.camera" android:required="false"/>
 
     <application
-        android:label="Livemate"
+        android:label="MyFlat Homes"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -387,7 +387,7 @@ class _DrawerFooter extends GetView<DashboardController> {
       children: [
         Expanded(
           child: Text(
-            'Livemate · v1.0.0',
+            'MyFlat Homes',
             style: AppTextStyles.caption.copyWith(fontSize: 11),
           ),
         ),

@@ -7,13 +7,18 @@ class LegalInfo {
   const LegalInfo({
     required this.privacyPolicyUrl,
     required this.deleteAccountUrl,
-    this.contactEmail,
+    required this.supportUrl,
+    required this.contactEmail,
     this.policyLastUpdated,
   });
 
+  /// Where support and privacy requests go until `GET /legal` says otherwise.
+  static const String defaultContactEmail = 'support@zygonich.com';
+
   final String privacyPolicyUrl;
   final String deleteAccountUrl;
-  final String? contactEmail;
+  final String supportUrl;
+  final String contactEmail;
 
   /// Display text as the server sends it, e.g. "15 September 2026".
   final String? policyLastUpdated;
@@ -23,6 +28,8 @@ class LegalInfo {
   factory LegalInfo.fallback() => LegalInfo(
     privacyPolicyUrl: '${Env.serverRoot}/privacy-policy',
     deleteAccountUrl: '${Env.serverRoot}/delete-account',
+    supportUrl: '${Env.serverRoot}/support',
+    contactEmail: defaultContactEmail,
   );
 
   factory LegalInfo.fromJson(Map<String, dynamic> json) {
@@ -36,7 +43,8 @@ class LegalInfo {
         json['deleteAccountUrl'],
         fallback.deleteAccountUrl,
       ),
-      contactEmail: asStringOrNull(json['contactEmail']),
+      supportUrl: asString(json['supportUrl'], fallback.supportUrl),
+      contactEmail: asString(json['contactEmail'], fallback.contactEmail),
       policyLastUpdated: asStringOrNull(json['policyLastUpdated']),
     );
   }

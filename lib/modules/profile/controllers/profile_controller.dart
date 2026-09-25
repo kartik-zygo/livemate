@@ -73,6 +73,17 @@ class ProfileController extends GetxController {
     }
   }
 
+  Future<void> openSupport() async {
+    final uri = Uri.tryParse(legal.value.supportUrl);
+    if (uri == null ||
+        !await launchUrl(uri, mode: LaunchMode.inAppBrowserView)) {
+      AppFeedback.error(
+        'The support page could not be opened. Email us at '
+        '${legal.value.contactEmail}.',
+      );
+    }
+  }
+
   /// App Store guideline 5.1.1(v): an app that lets people create an account
   /// must let them delete it from inside the app.
   Future<void> deleteAccount() async {

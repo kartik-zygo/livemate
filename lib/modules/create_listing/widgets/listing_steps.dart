@@ -108,8 +108,9 @@ class LocationStep extends StatelessWidget {
             const SizedBox(width: 12),
             Expanded(
               child: Text(
-                'Livemate matches city to city — there is no map, radius or '
-                'locality. Anyone searching this city will see your listing.',
+                'MyFlat Homes matches city to city — there is no map, radius '
+                'or locality. Anyone searching this city will see your '
+                'listing.',
                 style: AppTextStyles.caption.copyWith(height: 1.45),
               ),
             ),

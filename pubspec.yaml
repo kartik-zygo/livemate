@@ -1,8 +1,8 @@
 name: livemate
-description: "Livemate — find your place, find your people."
+description: "MyFlat Homes — find your place, find your people."
 publish_to: 'none'
 
-version: 2.0.3+3
+version: 4.0.6+6
 
 environment:
   sdk: ^3.8.0
@@ -60,7 +60,7 @@ flutter:
 
 # ── Launcher icons ────────────────────────────────────────────────────────
 # Sources are produced by tool/brand/generate_brand_assets.py from the same
-# geometry as assets/brand/livemate_mark.svg.
+# geometry as assets/brand/myflat_mark.svg.
 flutter_launcher_icons:
   image_path: "assets/brand/icon.png"
 

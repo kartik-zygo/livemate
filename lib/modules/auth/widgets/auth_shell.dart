@@ -62,10 +62,10 @@ class AuthShell extends StatelessWidget {
                               AppIllustration.logo.asset,
                               width: 40,
                               height: 40,
-                              semanticsLabel: 'Livemate',
+                              semanticsLabel: 'MyFlat Homes',
                             ),
                           const SizedBox(width: 11),
-                          const LivemateWordmark(fontSize: 19),
+                          const BrandWordmark(fontSize: 19),
                         ],
                       ),
                       if (showHero) ...[

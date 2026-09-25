@@ -41,8 +41,8 @@ class SearchView extends GetView<ListingSearchController> {
         onChoose: () => _pickCity(context),
         title: 'Pick a city to search',
         message:
-            'Livemate matches city to city. Choose one and every filter below '
-            'narrows within it.',
+            'MyFlat Homes matches city to city. Choose one and every filter '
+            'below narrows within it.',
       );
     }
 

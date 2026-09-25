@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Livemate</string>
+	<string>MyFlat Homes</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Livemate</string>
+	<string>MyFlat Homes</string>
 
 	<!-- Every connection (the API and Supabase) is standard HTTPS, which is
 	     exempt from export compliance. Declaring it here stops App Store
@@ -23,9 +23,9 @@
 
 	<!-- image_picker: shown when a user attaches photos to a listing. -->
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Livemate needs access to your photos so you can add pictures of your room to a listing.</string>
+	<string>MyFlat Homes needs access to your photos so you can add pictures of your room to a listing.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Livemate needs the camera so you can photograph your room for a listing.</string>
+	<string>MyFlat Homes needs the camera so you can photograph your room for a listing.</string>
 
 	<!-- url_launcher: dialling or emailing a contact revealed by an accepted enquiry. -->
 	<key>LSApplicationQueriesSchemes</key>

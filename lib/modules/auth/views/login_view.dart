@@ -88,7 +88,7 @@ class LoginView extends GetView<LoginController> {
         alignment: WrapAlignment.center,
         crossAxisAlignment: WrapCrossAlignment.center,
         children: [
-          Text('New to Livemate?', style: AppTextStyles.body),
+          Text('New to MyFlat Homes?', style: AppTextStyles.body),
           AppButton.ghost(
             label: 'Create an account',
             size: AppButtonSize.compact,

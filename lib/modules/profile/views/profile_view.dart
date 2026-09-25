@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 
 import '../../../app/theme/app_colors.dart';
 import '../../../app/theme/app_text_styles.dart';
-import '../../../core/config/env.dart';
 import '../../../core/utils/enum_meta.dart';
 import '../../../core/utils/formatters.dart';
 import '../../../core/widgets/app_button.dart';
@@ -320,8 +319,8 @@ class _PostsCard extends StatelessWidget {
   );
 }
 
-/// The privacy policy link and in-app account deletion both App Store and
-/// Play review look for.
+/// The support contact, privacy policy link and in-app account deletion both
+/// App Store and Play review look for.
 class _PrivacyCard extends StatelessWidget {
   const _PrivacyCard({required this.controller});
 
@@ -332,13 +331,22 @@ class _PrivacyCard extends StatelessWidget {
     padding: const EdgeInsets.symmetric(vertical: 6),
     child: Column(
       children: [
+        Obx(
+          () => _NavRow(
+            icon: Icons.support_agent_rounded,
+            title: 'Help & support',
+            subtitle: controller.legal.value.contactEmail,
+            onTap: controller.openSupport,
+          ),
+        ),
+        const Divider(height: 1, indent: 62, color: AppColors.line),
         Obx(() {
           final updated = controller.legal.value.policyLastUpdated;
           return _NavRow(
             icon: Icons.privacy_tip_rounded,
             title: 'Privacy policy',
             subtitle: updated == null
-                ? 'How Livemate handles your data'
+                ? 'How MyFlat Homes handles your data'
                 : 'Last updated $updated',
             onTap: controller.openPrivacyPolicy,
           );
@@ -363,7 +371,7 @@ class _AboutAppCard extends StatelessWidget {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('About Livemate', style: AppTextStyles.h3),
+        Text('About MyFlat Homes', style: AppTextStyles.h3),
         const SizedBox(height: 12),
         _InfoRow(
           icon: Icons.location_city_rounded,

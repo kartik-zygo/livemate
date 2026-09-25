@@ -45,7 +45,7 @@ class ReceivedEnquiryCard extends StatelessWidget {
             children: [
               Expanded(
                 child: PersonTile(
-                  name: sender?.fullName ?? 'A Livemate member',
+                  name: sender?.fullName ?? 'A MyFlat Homes member',
                   initials: sender?.initials ?? '?',
                   seed: sender?.id,
                   subtitle: sender?.occupation,
